@@ -6,6 +6,20 @@ from tkinter import messagebox
 import pickle
 
 MEDIDA_VENTANA_PRINCIPAL = 300
+#filas
+Matriz_1Y = 215 #y de 1era fila
+Matriz_2Y = 370 #y de 2da fila
+Matriz_3Y = 525 #y de 3era fila
+
+#columnas
+Matriz_1X = 25
+Matriz_2X = 180
+Matriz_3X = 335
+Matriz_4X = 490
+Matriz_5X = 670
+Matriz_6X = 825
+Matriz_7X = 1000
+Matriz_8X = 1150
 
 class interfaz():
     def __init__(self):
@@ -21,7 +35,7 @@ class interfaz():
         self.ven_tablero.protocol("WM_DELETE_WINDOW", self.cerrar_todo)
 
         # Cargar imagenes
-        self.ImgBackground = PhotoImage(file="Include/tablero.png")
+        self.ImgBackground = PhotoImage(file="Include/tablero.png")    
         self.ImgFichaBlanca = PhotoImage(file="Include/blanca.png")
         self.ImgFichaNegra = PhotoImage(file="Include/negra.png")
         self.ImgDado0A = PhotoImage(file="Include/dado0-a.png")
@@ -34,15 +48,6 @@ class interfaz():
         # Fondos y Etiquetas
         Label(self.ven_principal, bg="white", height=MEDIDA_VENTANA_PRINCIPAL, width=MEDIDA_VENTANA_PRINCIPAL).place(x=0, y=0)
         Label(self.ven_principal, bg="white", text="Juego Real de Ur", underline=0, fg="orange red", bd=5, pady=20, padx=7, font=("Tahoma", 28)).grid(row=0, column=0)
-        Label(self.ven_principal, bg="white", text="Dificultad:", fg="Black", pady=8, padx=2, font=("Tahoma", 15)).grid(row=1, column=0)
-
-        # Combos(Spinbox)
-        self.dificultad = StringVar()
-        spnDificultad = Spinbox(self.ven_principal, values=("Fácil", "Medio", "Difícil", "Infernal"),
-                             state="readonly", textvariable=self.dificultad, font=("Tahoma", 12)).grid(row=2, column=0)
-
-        Label(self.ven_principal, bg="white", text=" ", pady=14, padx=2).grid(
-            row=3, column=0)
 
         # Botones
         self.btnInicio = Button(self.ven_principal, text="Inicio Juego", font=("Tahoma", 12), command=self.iniciarJuego, pady=4, padx=2).grid(row=4, column=0)
@@ -51,7 +56,32 @@ class interfaz():
 
         Label(self.ven_tablero, bg="white", text=" ", width=1305, height=880).place(x=0, y=0)
         Label(self.ven_tablero, image=self.ImgBackground, bd=0).place(x=0, y=197)
+        #prueba de posiciones
+        #fichas 1er fila
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_1X, y=Matriz_1Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_2X, y=Matriz_1Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_3X, y=Matriz_1Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_4X, y=Matriz_1Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_7X, y=Matriz_1Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_8X, y=Matriz_1Y)
+        #fichas 2da fila
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_1X, y=Matriz_2Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_2X, y=Matriz_2Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_3X, y=Matriz_2Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_4X, y=Matriz_2Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_5X, y=Matriz_2Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_6X, y=Matriz_2Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_7X, y=Matriz_2Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_8X, y=Matriz_2Y)
+        #fichas 3er fila
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_4X, y=Matriz_3Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_3X, y=Matriz_3Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_2X, y=Matriz_3Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_1X, y=Matriz_3Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_7X, y=Matriz_3Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_8X, y=Matriz_3Y)
 
+        
         #INFO IA
         Label(self.ven_tablero, text="Oponente", bg="red", fg="white", font=("Tahoma", 15)).place(x=10, y=10)
 
@@ -89,6 +119,7 @@ class interfaz():
         self.ven_principal.mainloop()
 
     # Interfáz gráfica
+
 
     # Mostrar y Ocultar ventanas
 
