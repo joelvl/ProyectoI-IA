@@ -22,6 +22,12 @@ Matriz_7X = 1000
 Matriz_8X = 1150
 
 class interfaz():
+    def mouseClick(self,eventorigin): #método que se ejecuta al dar click en label
+      global x,y
+      x = eventorigin.x
+      y = eventorigin.y
+      print(x,y)
+      
     def __init__(self):
         # Ventana principal
         self.ven_principal = Tk()
@@ -84,7 +90,6 @@ class interfaz():
         
         #INFO IA
         Label(self.ven_tablero, text="Oponente", bg="red", fg="white", font=("Tahoma", 15)).place(x=10, y=10)
-
         self.iaCasaVal = StringVar()
         Label(self.ven_tablero, text="Fichas restantes en casa:", bg="white", font=("Tahoma", 15)).place(x=40, y=50)
         Label(self.ven_tablero, textvariable=self.iaCasaVal, bg="white", font=("Tahoma", 15)).place(x=270, y=50)
@@ -104,6 +109,11 @@ class interfaz():
         Label(self.ven_tablero, text="Fichas restantes en casa:", bg="white", font=("Tahoma", 15)).place(x=40, y=740)
         Label(self.ven_tablero, textvariable=self.jgdrCasaVal, bg="white", font=("Tahoma", 15)).place(x=270, y=740)
         Label(self.ven_tablero, image=self.ImgPilaBlanca).place(x=400, y=710)
+        LabelPilaBlanca = Label(self.ven_tablero, image=self.ImgPilaBlanca)
+        LabelPilaBlanca.place(x=400, y=710)
+        LabelPilaBlanca.bind( "<Button>", self.mouseClick )
+        
+        
         self.jgdrSalidaVal = StringVar()
         Label(self.ven_tablero, text="Fichas en salida: ", bg="white", font=("Tahoma", 15)).place(x=1080, y=740)
         Label(self.ven_tablero, textvariable=self.jgdrSalidaVal, bg="white", font=("Tahoma", 15)).place(x=1230, y=740)
@@ -118,8 +128,7 @@ class interfaz():
         self.ven_tablero.withdraw()  # Oculta ventana
         self.ven_principal.mainloop()
 
-    # Interfáz gráfica
-
+    # Interfáz gráfica 
 
     # Mostrar y Ocultar ventanas
 
