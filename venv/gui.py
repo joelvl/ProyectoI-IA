@@ -23,10 +23,11 @@ Matriz_8X = 1150
 
 class interfaz():
     def mouseClick(self,eventorigin): #método que se ejecuta al dar click en label
-      global x,y
-      x = eventorigin.x
-      y = eventorigin.y
-      print(x,y)
+      Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_4X, y=Matriz_3Y)
+      #global x,y
+      #x = eventorigin.x
+      #y = eventorigin.y
+      #print(x,y)
       
     def __init__(self):
         # Ventana principal
@@ -63,7 +64,7 @@ class interfaz():
         Label(self.ven_tablero, bg="white", text=" ", width=1305, height=880).place(x=0, y=0)
         Label(self.ven_tablero, image=self.ImgBackground, bd=0).place(x=0, y=197)
         #prueba de posiciones
-        #fichas 1er fila
+        '''#fichas 1er fila
         Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_1X, y=Matriz_1Y)
         Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_2X, y=Matriz_1Y)
         Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_3X, y=Matriz_1Y)
@@ -85,7 +86,7 @@ class interfaz():
         Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_2X, y=Matriz_3Y)
         Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_1X, y=Matriz_3Y)
         Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_7X, y=Matriz_3Y)
-        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_8X, y=Matriz_3Y)
+        Label(self.ven_tablero, image=self.ImgFichaBlanca, bd=0).place(x=Matriz_8X, y=Matriz_3Y)'''
 
         
         #INFO IA
